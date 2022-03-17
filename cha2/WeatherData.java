@@ -1,5 +1,6 @@
 package cha2;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import cha2.myinterface.*;
 
 /**
@@ -10,10 +11,18 @@ import cha2.myinterface.*;
  */
 public class WeatherData implements Subject{
     private ArrayList<Observer> observers;
+=======
+
+import java.util.Observable;
+import java.util.Observer;
+
+public class WeatherData extends Observable {
+>>>>>>> eb5c0f1a62cbf50cd99a8c2d1d7639e76e0f5ce8
     private float temperature;
     private float humidity;
     private float pressure;
 
+<<<<<<< HEAD
     // 构造函数将观察者存放在一个 ArrayList 中
     public WeatherData(){
         observers = new ArrayList<>();
@@ -42,10 +51,14 @@ public class WeatherData implements Subject{
             obs.update(this.temperature, this.humidity, this.pressure);
         }
     }
+=======
+    public WeatherData(){}
+>>>>>>> eb5c0f1a62cbf50cd99a8c2d1d7639e76e0f5ce8
 
 
     public void measurementsChanged(){
-        this.notifyObserver();
+        setChanged();
+        notifyObservers();
     }
 
     /**
@@ -57,5 +70,17 @@ public class WeatherData implements Subject{
         this.humidity = humidity;
         this.pressure = pressure;
         measurementsChanged();
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getPressure() {
+        return pressure;
+    }
+
+    public float getTemperature() {
+        return temperature;
     }
 }
