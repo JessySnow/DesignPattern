@@ -1,4 +1,8 @@
 package cha3;
+import cha3.MyTest.model.Chicken;
+import cha3.MyTest.model.Dish;
+import cha3.MyTest.model.Rice;
+import cha3.MyTest.model.Tea;
 import cha3.model.*;
 
 public class Main{
